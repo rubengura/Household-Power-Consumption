@@ -58,10 +58,8 @@ summary(initialPowerData)
 
 ```
 
-The first thing that shows up is that all variables are codified as factors. Specifically, all variables with energy measurements are factor because of there are 25979 cells with question mark ("?") in each variable, which can be considered as missing values. Moreover, variable `Sub_metering_3` instead of having question mark on missing values has empty values ("").  
-In order to fix this issue we are going to import the data again setting NA's as question marks.
-
-**Important**: Although we could set `Date` and `Time` variables as date type variables, we are going to skip changes for now because we will deal with them later. 
+The first thing that shows up is that all variables are codified as factors, we will need to change them to the proper format (`Date` and `Time` will be converted to date type variables and the rest of the variables will be converted to numeric). Also, all variables with energy measurements have 25979 cells with question mark ("?") in each variable, which can be considered as missing values (except for `Sub_metering_3`). Variable `Sub_metering_3` instead of having question mark on missing values has empty values (""). In order to fix this issue we are going to import the data again setting NA's as question marks.
+ 
 
 ```{r proper import}
 
@@ -73,11 +71,11 @@ Let's check again the structure and the summary of the imported data:
 
 ```{r proper summary}
 
-str(powerData)
 summary(powerData)
 
 ```
 
+Now we can see on the summary that all cells with question mark or empty space are now readed as missing values NA's.
 
 # Acknowledgements
 
