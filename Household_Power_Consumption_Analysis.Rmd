@@ -20,6 +20,7 @@ The main purpose of the analysis is to understand the behaviour of a family in t
 # Data Set Description
 
 The data collected is from a french house, probably located in Clamart. It contains 2.075.259 measurements gathered between December 2006 and November 2010. The measurements were recorded with a one-minute sampling rate over 47 months.
+The data set can be donwloaded [here](http://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption).
 
 ## Attribute Information
 
@@ -37,6 +38,45 @@ The dataset contains 9 columns described below:
 
 # Import Data
 
+In firt place, we are going to import the raw data through `read.csv` and assign it into `initialPowerData`. If you open the raw file you will find that the separator between attributes is the semicolon (";").
+
+```{r Initial import}
+
+initialPowerData <- read.csv2("household_power_consumption.txt")
+
+# Alternative
+# initialPowerData <- read.csv("household_power_consumption.txt", sep = ";")
+
+```
+
+The next step will be to check what is inside the data we have imported through `str()` and `summary()` functions.
+
+```{r Initial summary}
+
+str(initialPowerData)
+summary(initialPowerData)
+
+```
+
+The first thing that shows up is that all variables are codified as factors. Specifically, all variables with energy measurements are factor because of there are 25979 cells with question mark ("?") in each variable, which can be considered as missing values. Moreover, variable `Sub_metering_3` instead of having question mark on missing values has empty values ("").  
+In order to fix this issue we are going to import the data again setting NA's as question marks.
+
+**Important**: Although we could set `Date` and `Time` variables as date type variables, we are going to skip changes for now because we will deal with them later. 
+
+```{r proper import}
+
+powerData <- read.csv2("household_power_consumption.txt", na.strings = c("?",""))
+
+```
+
+Let's check again the structure and the summary of the imported data:
+
+```{r proper summary}
+
+str(powerData)
+summary(powerData)
+
+```
 
 
 # Acknowledgements
