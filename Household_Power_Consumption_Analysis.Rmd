@@ -1,0 +1,46 @@
+---
+title: "Household Power Consumption Analysis"
+author: "Rubén Guerrero Ramírez"
+date: "20 de julio de 2018"
+output: 
+  html_document:
+    toc: True
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+```
+
+# Introduction
+
+The goal of this document is to report all the steps done through the analysis of a household power consumption. 
+The main purpose of the analysis is to understand the behaviour of a family in their home through the use of the energy measured through different submeters. Also, the cost of the energy consumption will be analyzed in order to make a prediction of future energy behaviour.  
+
+# Data Set Description
+
+The data collected is from a french house, probably located in Clamart. It contains 2.075.259 measurements gathered between December 2006 and November 2010. The measurements were recorded with a one-minute sampling rate over 47 months.
+
+## Attribute Information
+
+The dataset contains 9 columns described below:
+
+ 1. **date**: Date in format `dd/mm/yyyy`.
+ 2. **time**: Time in format `hh:mm:ss`.
+ 3. **golbal_active_power**: Household global minute-averaged active power (in kilowatt).
+ 4. **global_reactive_power**: Household global minute-averaged reactive power (in kilowatt) 
+ 5. **voltage**: Minute-averaged voltage (in volt) 
+ 6. **global_intensity**: Household global minute-averaged current intensity (in ampere) 
+ 7. **sub_metering_1**: Energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered). 
+ 8. **sub_metering_2**: Energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room,  containing a washing-machine, a tumble-drier, a refrigerator and a light. 
+ 9. **sub_metering_3**: Energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
+
+# Import Data
+
+
+
+# Acknowledgements
+
+The data used belongs to:
+
+  Dua, D. and Karra Taniskidou, E. (2017). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science. 
